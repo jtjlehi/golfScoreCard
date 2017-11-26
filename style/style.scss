@@ -1,6 +1,7 @@
 @import "variables";
 html{
+  @include bodyStyle();
   body{
-
+    @include bodyStyle();
   }
 }
