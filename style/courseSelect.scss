@@ -1,0 +1,19 @@
+.courseSelectCont{
+  @media (min-width: 800px) {
+    width: 50%;
+  }
+  width: 100%;
+  margin: 15% auto;
+  height: 50%;
+  border-radius: 10px;
+  background-color: $green;
+  @include depth(2, #222);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .courseSelect {
+    height: 40px;
+    width: 40%;
+    font-size: 20px;
+  }
+}

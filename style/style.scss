@@ -4,5 +4,9 @@ html{
   @include bodyStyle();
   body{
     @include bodyStyle();
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../image/golfBackgroundImage.jpg");
+    overflow: hidden;
   }
 }

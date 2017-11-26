@@ -4,3 +4,8 @@
   margin: 0px;
   padding: 0px;
 }
+@mixin depth($height, $color) {
+  box-shadow: 4px*$height 4px*$height 10px 0px $color;
+  z-index: $height;
+}
+$green: #176014;
