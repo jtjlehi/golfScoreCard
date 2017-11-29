@@ -159,7 +159,9 @@ function startGame(teeTypes, teeTypeIndex) {
     $('.cardCont').removeClass('hidden');
 }
 function displayHoleRow(holeCount) {
-
+    for(let i = 1; i <= holeCount; i ++) {
+        $('.holeNumRow').append(`<div>${i}</div>`)
+    }
 }
 function addPlayer(numOfHoles) {
     for(let i = 0; i < numOfHoles; i ++) {
