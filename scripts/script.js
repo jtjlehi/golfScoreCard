@@ -184,6 +184,7 @@ function addPlayer(numOfHoles, firstTime) {
     playerRow.row.append(`<div class="totalScore"></div>`);
     playerRow.row.append(`<input type="number" class="hcp player${playerRow.count}Hcp" value="0">`);
 }
+//a conditional that is run every time you add the list, and then returns a value to "playerRow" above
 function addPlayerConditional(firstTime) {
     if(firstTime === undefined) {
         let playerCont = $('.playerCont');
