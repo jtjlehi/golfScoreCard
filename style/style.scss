@@ -8,5 +8,8 @@ html{
     background-repeat: no-repeat;
     background-image: url("../image/golfBackgroundImage.jpg");
     overflow: hidden;
+    .hidden {
+      display: none;
+    }
   }
 }
