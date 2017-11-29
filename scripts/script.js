@@ -1,7 +1,7 @@
 $(document).ready(function () {
     let courseInfo = sessionStorage.getItem('courseInfo');
-    let teeType = sessionStorage.getItem('')
-    if(courseInfo === undefined) {
+    let teeType = sessionStorage.getItem('');
+    if(courseInfo === null) {
         //grab the courses to choose from
         $('#zipCode').keyup(function (event) {
             if (event.which === 13) {
@@ -56,7 +56,7 @@ function selectCourse(courseId) {
         success: function (data) {
             let courseInfo = JSON.parse(data);
             sessionStorage.setItem("courseInfo", JSON.stringify(courseInfo));
-            teeTypeSelector(courseInfo.course);
+            teeTypeSelector(courseInfo);
         }
     });
 }
@@ -65,6 +65,7 @@ function teeTypeSelector(courseInfo) {
     //set up the course info to be easier to grab.
     courseInfo = courseInfo.course;
     let holes = courseInfo.holes;
+    //todo this may not be needed see if it is, then just remove it.
     let menHandyCap = [];
     let womenHandyCap = [];
     //actually put the handy cap values into the arrays
@@ -154,17 +155,52 @@ function startGame(teeTypes, teeTypeIndex) {
     let holeCount = holes.length;
     //build the card
     displayHoleRow(holeCount);
+    displayTeeRow(holeCount, selectedTeeType, holes);
+    addPlayer(holeCount, true);
     //display the card
     $('.teeSelectCont').addClass('hidden');
     $('.cardCont').removeClass('hidden');
 }
 function displayHoleRow(holeCount) {
     for(let i = 1; i <= holeCount; i ++) {
-        $('.holeNumRow').append(`<div>${i}</div>`)
+        $('.holeNumRow').append(`<div class="cardCell holeNumCell">${i}</div>`);
     }
 }
-function addPlayer(numOfHoles) {
+function displayTeeRow(holeCount, teeType, holes) {
+    $('.teeRowLabel').html(`<span>${teeType.color}</span><span>${teeType.totalPar}</span>`);
+    for(let i = 0; i < holeCount; i ++) {
+        $('.teeRow').append(`<div class="cardCell teeCell">${holes[i].yards}</div>`);
+        $('.parRow').append(`<div class="cardCell parCell">${holes[i].par}</div>`);
+        $('.hcpRow').append(`<div class="cardCell hcpCell">${holes[i].hcp}</div>`);
+    }
+}
+function addPlayer(numOfHoles, firstTime) {
+    let playerRow = addPlayerConditional(firstTime);
     for(let i = 0; i < numOfHoles; i ++) {
-
+        let nodeAdded =
+            `<input type="number" value="0" class="cardCell playerCell player${playerRow.count}">`;
+        playerRow.row.append(nodeAdded);
+    }
+    playerRow.row.append(`<div class="totalScore"></div>`);
+    playerRow.row.append(`<input type="number" class="hcp player${playerRow.count}Hcp" value="0">`);
+}
+function addPlayerConditional(firstTime) {
+    if(firstTime === undefined) {
+        let playerCont = $('.playerCont');
+        let playerCount = playerCont.children().last().data('playerCount') + 1;
+        playerRow = $(`<div id="player${playerCount}" class="playerRow"></div>`);
+        playerCont.append(playerRow);
+        playerRow.data('playerCount', playerCount);
+        return {
+            row: playerRow,
+            count: playerCount
+        };
+    }
+    else{
+        $('#player1').data('playerCount', 1);
+        return {
+            row: $('#player1'),
+            count: 1
+        }
     }
 }
