@@ -9,10 +9,24 @@
     <title>Title</title>
 </head>
 <body>
-<div class="courseSelectCont">
-    <select class="courseSelect" name="courseSelect" id="courseSelect">
-        <option value="none"></option>
-    </select>
+<div class="startCont">
+    <div class="locationSelectCont">
+        <label for="zipCode">Zip Code</label>
+        <input type="number" name="zipCode" id="zipCode">
+    </div>
+    <div class="courseSelectCont hidden">
+        <label for="courseSelect">Choose A Golf Course</label>
+        <select class="courseSelect"
+            name="courseSelect"
+            id="courseSelect">
+            <option value="none"></option>
+        </select>
+        <div>
+            <button id='startButton' class="courseSelectButton">
+                Start
+            </button>
+        </div>
+    </div>
 </div>
 </body>
 <script src="scripts/script.js"></script>
