@@ -1,32 +1,42 @@
 $(document).ready(function () {
     let courseInfo = sessionStorage.getItem('courseInfo');
-    let teeType = sessionStorage.getItem('');
-    if(courseInfo === null) {
+    let teeTypeIndex = sessionStorage.getItem('teeTypeIndex');
+    let teeType = sessionStorage.getItem('teeType');
+    if(teeType === null) {
         //grab the courses to choose from
         $('#zipCode').keyup(function (event) {
             if (event.which === 13) {
                 getLocation();
             }
         });
+        $('#zipCode').focus(function () {
+            $('#forZipCode').animate({width: '70px'}, 300);
+        });
+        $('#zipCode').blur(function () {
+            $('#forZipCode').animate({width: '0px'});
+        });
+        $('#zipCodeButton').click(getLocation, teeTypeIndex);
     }
     else{
-        teeTypeSelector(JSON.parse(courseInfo));
+        startGame(JSON.parse(teeType));
     }
 });
 //pull lat and long based on zip code
 function getLocation(func) {
     let zipCode = $('#zipCode').val();
-    let apiKey = "AIzaSyC8rMZYfIhoWQfVnbqDBqvoDpjLwtrk488";
-    $.ajax("https://maps.googleapis.com/maps/api/geocode/json?address=" + zipCode + "&key=" + apiKey, {
-        success: function (data) {
-            let locationInfo = {
-                latitude: data.results[0].geometry.location.lat,
-                longitude: data.results[0].geometry.location.lng,
-                radius: 100
-            };
-            loadCourses(locationInfo);
-        }
-    });
+    if(zipCode.length === 5) {
+        let apiKey = "AIzaSyC8rMZYfIhoWQfVnbqDBqvoDpjLwtrk488";
+        $.ajax("https://maps.googleapis.com/maps/api/geocode/json?address=" + zipCode + "&key=" + apiKey, {
+            success: function (data) {
+                let locationInfo = {
+                    latitude: data.results[0].geometry.location.lat,
+                    longitude: data.results[0].geometry.location.lng,
+                    radius: 100
+                };
+                loadCourses(locationInfo);
+            }
+        });
+    }
 }
 function loadCourses(locationInfo) {
     $.post("https://golf-courses-api.herokuapp.com/courses", locationInfo, function (data, status) {
@@ -101,10 +111,12 @@ function teeTypeSelector(courseInfo) {
     //this function will be run when they choose the
     $('.chooseTeeType').click(function () {
         let teeTypeIndex = $('#teeSelect').val();
+        sessionStorage.setItem('teeType', JSON.stringify(teeTypes));
+        sessionStorage.setItem('teeTypeIndex', JSON.stringify(teeTypes));
         startGame(teeTypes, teeTypeIndex);
     });
     $('.teeSelectCont').removeClass('hidden');
-    $('.startCont').addClass('hidden');
+    $('.courseSelectCont').addClass('hidden');
 }
 class Tee {
     constructor(color, hexColor, type, totalPar, rating, yards) {
@@ -148,7 +160,6 @@ function displaySelectTee(teeTypes) {
 function startGame(teeTypes, teeTypeIndex) {
     //store the tee type data for if they reload the page
     let teeTypesObj = {teeTypes: teeTypes};
-    sessionStorage.setItem('teeType', JSON.stringify(teeTypesObj));
     //shorter references
     let selectedTeeType = teeTypes[teeTypeIndex];
     let holes = selectedTeeType.holes;
@@ -158,7 +169,7 @@ function startGame(teeTypes, teeTypeIndex) {
     displayTeeRow(holeCount, selectedTeeType, holes);
     addPlayer(holeCount, true);
     //display the card
-    $('.teeSelectCont').addClass('hidden');
+    $('.startCont').addClass('hidden');
     $('.cardCont').removeClass('hidden');
 }
 function displayHoleRow(holeCount) {

@@ -6,35 +6,63 @@
     <meta charset="UTF-8">
     <meta name="veiwport" content="initial-scale=1.0 width=device-width">
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <title>Title</title>
 </head>
 <body>
+
+<div class="mdl-spinner mdl-js-spinner"></div>
 <div class="startCont">
     <div class="locationSelectCont">
-        <label for="zipCode">Zip Code</label>
-        <input type="number" name="zipCode" id="zipCode">
-    </div>
-    <div class="courseSelectCont hidden">
-        <label for="courseSelect" class="courseSelectLabel">Choose A Golf Course</label>
-        <select class="courseSelect"
-            name="courseSelect"
-            id="courseSelect">
-            <option value="none"></option>
-        </select>
-        <div>
-            <button id='startButton' class="courseSelectButton">
-                Start
-            </button>
+        <div class="innerCont">
+            <label for="zipCode">Zip Code</label>
+            <input type="number" name="zipCode" id="zipCode" placeholder="12345">
+            <div class="inputSelected" id="forZipCode"></div>
+            <button
+                    id='zipCodeButton'
+                    class="courseSelectButton
+                    mdl-button
+                    mdl-js-button
+                    mdl-button--raised
+                    mdl-js-ripple-effect
+                    mdl-button--colored">NEXT</button>
         </div>
     </div>
-</div>
-<div class="teeSelectCont hidden">
-    <label class="teeSelectLabel" for="teeSelect">Choose the Tee Type</label>
-    <select class="teeSelect"
-            name="teeSelect"
-            id="teeSelect">
-    </select>
-    <button class="chooseTeeType">Choose Tee Type</button>
+    <div class="courseSelectCont hidden">
+        <div class="innerCont">
+            <label for="courseSelect" class="courseSelectLabel">Choose A Golf Course</label>
+            <select class="courseSelect"
+                name="courseSelect"
+                id="courseSelect">
+            </select>
+            <div>
+                <button id='startButton'
+                    class="courseSelectButton
+                    mdl-button
+                    mdl-js-button
+                    mdl-button--raised
+                    mdl-js-ripple-effect
+                    mdl-button--colored">NEXT</button>
+            </div>
+        </div>
+    </div>
+    <div class="teeSelectCont hidden">
+        <div class="innerCont">
+            <label class="teeSelectLabel" for="teeSelect">Choose the Tee Type</label>
+            <select class="teeSelect"
+                name="teeSelect"
+                id="teeSelect">
+            </select>
+            <button class="chooseTeeType
+                mdl-button
+                mdl-js-button
+                mdl-button--raised
+                mdl-js-ripple-effect
+                mdl-button--colored">LOAD CARD</button>
+        </div>
+    </div>
 </div>
 <div class="cardCont hidden">
     <div class="cardRow holeNumRow">

@@ -8,8 +8,40 @@ html{
     background-repeat: no-repeat;
     background-image: url("../image/golfBackgroundImage.jpg");
     overflow: hidden;
-    .hidden {
-      display: none;
-    }
   }
+}
+.hidden {
+  display: none;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+input, select {
+  background-color: $inputBackground;
+  font-size: 20px;
+  margin: 20px;
+}
+input:focus, select:focus, button:focus{
+  outline: none;
+}
+.inputSelected {
+  width: 0px;
+  height: 2px;
+  border-radius: 2px;
+  position: relative;
+  background-color: $blue;
+}
+button{
+  font-size: 20px;
+  @include robotoBold();
+  border-radius: 3px;
+  padding: 7px 10px;
+  background-color: $blue;
+  border: none;
+  @include depth(.5, #222);
+}
+button:hover {
+  cursor: pointer;
 }

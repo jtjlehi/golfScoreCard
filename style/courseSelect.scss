@@ -6,17 +6,45 @@
     width: 35%;
   }
   width: 100%;
-  margin: 15% auto;
+  margin: 100px auto;
   height: 50%;
   border-radius: 10px;
   background-color: $green;
   @include depth(2, #222);
+  .courseSelectCont {
+    font-size: 20px;
+    .courseSelect {
+      height: 40px;
+      font-size: 20px;
+    }
+  }
+  .locationSelectCont {
+    label {
+      //font-size: 20px;
+      //color: $textColor;
+    }
+    input {
+      height: 40px;
+      width: 80px;
+      text-align: center;
+      -webkit-appearance: none;
+      background-color: #f1f1f1;
+      border-radius: 2px;
+      border: none;
+      margin: 10px;
+    }
+    .inputSelected {
+      top: -18px;
+    }
+  }
+}
+.innerCont {
+  @include roboto();
+  padding-top: 20px;
+  color: $textColor;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .courseSelect {
-    height: 40px;
-    font-size: 20px;
-  }
 }

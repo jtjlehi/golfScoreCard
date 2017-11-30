@@ -1,24 +1,49 @@
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Light.ttf"); }
+@font-face {
+  font-family: RobotoBold;
+  src: url("../fonts/Roboto-Bold.ttf"); }
 .startCont {
   width: 100%;
-  margin: 15% auto;
+  margin: 100px auto;
   height: 50%;
   border-radius: 10px;
   background-color: #176014;
   box-shadow: 6px 6px 30px 0px #222;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; }
+  z-index: 2; }
   @media (min-width: 800px) {
     .startCont {
       width: 50%; } }
   @media (min-width: 1200px) {
     .startCont {
       width: 35%; } }
-  .startCont .courseSelect {
-    height: 40px;
+  .startCont .courseSelectCont {
     font-size: 20px; }
+    .startCont .courseSelectCont .courseSelect {
+      height: 40px;
+      font-size: 20px; }
+  .startCont .locationSelectCont input {
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    -webkit-appearance: none;
+    background-color: #f1f1f1;
+    border-radius: 2px;
+    border: none;
+    margin: 10px; }
+  .startCont .locationSelectCont .inputSelected {
+    top: -18px; }
+
+.innerCont {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 20px;
+  color: #d0d0d0;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
 
 html {
   width: 100%;
@@ -34,7 +59,40 @@ html {
     background-repeat: no-repeat;
     background-image: url("../image/golfBackgroundImage.jpg");
     overflow: hidden; }
-    html body .hidden {
-      display: none; }
+
+.hidden {
+  display: none; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input, select {
+  background-color: #f1f1f1;
+  font-size: 20px;
+  margin: 20px; }
+
+input:focus, select:focus, button:focus {
+  outline: none; }
+
+.inputSelected {
+  width: 0px;
+  height: 2px;
+  border-radius: 2px;
+  position: relative;
+  background-color: #141fa7; }
+
+button {
+  font-size: 20px;
+  border-radius: 3px;
+  padding: 7px 10px;
+  background-color: #141fa7;
+  border: none;
+  box-shadow: 1.5px 1.5px 30px 0px #222;
+  z-index: 0.5; }
+
+button:hover {
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */
