@@ -18,7 +18,7 @@ $(document).ready(function () {
         $('#zipCodeButton').click(getLocation, teeTypeIndex);
     }
     else{
-        startGame(JSON.parse(teeType));
+        startGame(JSON.parse(teeType), JSON.parse(teeTypeIndex));
     }
 });
 //pull lat and long based on zip code
@@ -112,7 +112,7 @@ function teeTypeSelector(courseInfo) {
     $('.chooseTeeType').click(function () {
         let teeTypeIndex = $('#teeSelect').val();
         sessionStorage.setItem('teeType', JSON.stringify(teeTypes));
-        sessionStorage.setItem('teeTypeIndex', JSON.stringify(teeTypes));
+        sessionStorage.setItem('teeTypeIndex', JSON.stringify(teeTypeIndex));
         startGame(teeTypes, teeTypeIndex);
     });
     $('.teeSelectCont').removeClass('hidden');
