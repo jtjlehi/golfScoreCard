@@ -6,11 +6,8 @@
     width: 35%;
   }
   width: 100%;
-  margin: 100px auto;
   height: 50%;
-  border-radius: 10px;
-  background-color: $green;
-  @include depth(2, #222);
+  @include cardStyle();
   .courseSelectCont {
     font-size: 20px;
     .courseSelect {

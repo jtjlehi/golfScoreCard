@@ -6,6 +6,12 @@
   font-family: RobotoBold;
   src: url('../fonts/Roboto-Bold.ttf');
 }
+@mixin cardStyle() {;
+  margin: 100px auto;
+  border-radius: 10px;
+  background-color: $green;
+  @include depth(2, #222);
+}
 @mixin roboto() {
   font-family: 'Roboto', sans-serif;
 }
