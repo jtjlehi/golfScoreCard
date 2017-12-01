@@ -1,4 +1,19 @@
 .cardCont {
   @include cardStyle();
+  .card {
+    display: grid;
+    grid-template-rows: 10% auto 10%;
+    .teeRow {
 
+    }
+    .parRow {
+
+    }
+    .hcpRow {
+
+    }
+    .cardRow {
+
+    }
+  }
 }

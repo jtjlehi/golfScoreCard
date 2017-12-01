@@ -51,6 +51,9 @@
   background-color: #176014;
   box-shadow: 6px 6px 30px 0px #222;
   z-index: 2; }
+  .cardCont .card {
+    display: grid;
+    grid-template-rows: 10% auto 10%; }
 
 html {
   width: 100%;
@@ -101,5 +104,9 @@ button {
 
 button:hover {
   cursor: pointer; }
+
+.loadCont {
+  position: absolute;
+  left: 100px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -13,7 +13,9 @@
 </head>
 <body>
 
-<div class="mdl-spinner mdl-js-spinner"></div>
+<div class="loadCont">
+    <div class="mdl-spinner mdl-js-spinner is-active"></div>
+</div>
 <div class="startCont">
     <div class="locationSelectCont">
         <div class="innerCont">
@@ -65,22 +67,32 @@
     </div>
 </div>
 <div class="cardCont hidden">
-    <div class="cardRow holeNumRow">
-        <div class="rowLabel">
-            <span>Hole</span>
+    <div class="card">
+        <div class="cardRow holeNumRow">
+            <div class="rowLabel">
+                <span>Hole</span>
+            </div>
+            <div class="innerRow"></div>
+            <div class="rowSeparator"></div>
         </div>
-    </div>
-    <div class="cardRow teeRow">
-        <div class="rowLabel teeRowLabel"></div>
-    </div>
-    <div class="cardRow parRow">
-        <div class="rowLabel">Par</div>
-    </div>
-    <div class="cardRow hcpRow">
-        <div class="rowLabel">Handicap</div>
-    </div>
-    <div class="playerCont">
-        <div id="player1" class="playerRow"></div>
+        <div class="cardRow teeRow">
+            <div class="rowLabel teeRowLabel"></div>
+            <div class="innerRow"></div>
+            <div class="rowSeparator"></div>
+        </div>
+        <div class="cardRow parRow">
+            <div class="rowLabel">Par</div>
+            <div class="innerRow"></div>
+            <div class="rowSeparator"></div>
+        </div>
+        <div class="cardRow hcpRow">
+            <div class="rowLabel">Handicap</div>
+            <div class="innerRow"></div>
+            <div class="rowSeparator"></div>
+        </div>
+        <div class="playerCont">
+            <div id="player1" class="playerRow"></div>
+        </div>
     </div>
 </div>
 </body>

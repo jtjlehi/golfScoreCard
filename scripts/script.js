@@ -174,15 +174,15 @@ function startGame(teeTypes, teeTypeIndex) {
 }
 function displayHoleRow(holeCount) {
     for(let i = 1; i <= holeCount; i ++) {
-        $('.holeNumRow').append(`<div class="cardCell holeNumCell">${i}</div>`);
+        $('.holeNumRow.innerRow').append(`<div class="cardCell holeNumCell">${i}</div>`);
     }
 }
 function displayTeeRow(holeCount, teeType, holes) {
     $('.teeRowLabel').html(`<span>${teeType.color}</span><span>${teeType.totalPar}</span>`);
     for(let i = 0; i < holeCount; i ++) {
-        $('.teeRow').append(`<div class="cardCell teeCell">${holes[i].yards}</div>`);
-        $('.parRow').append(`<div class="cardCell parCell">${holes[i].par}</div>`);
-        $('.hcpRow').append(`<div class="cardCell hcpCell">${holes[i].hcp}</div>`);
+        $('.teeRow.innerRow').append(`<div class="cardCell teeCell">${holes[i].yards}</div>`);
+        $('.parRow.innerRow').append(`<div class="cardCell parCell">${holes[i].par}</div>`);
+        $('.hcpRow.innerRow').append(`<div class="cardCell hcpCell">${holes[i].hcp}</div>`);
     }
 }
 function addPlayer(numOfHoles, firstTime) {
@@ -193,7 +193,10 @@ function addPlayer(numOfHoles, firstTime) {
         playerRow.row.append(nodeAdded);
     }
     playerRow.row.append(`<div class="totalScore"></div>`);
-    playerRow.row.append(`<input type="number" class="hcp player${playerRow.count}Hcp" value="0">`);
+    playerRow.row.append(`<input 
+                            type="number" 
+                            class="hcp player${playerRow.count}Hcp" 
+                            value="0">`);
 }
 //a conditional that is run every time you add the list, and then returns a value to "playerRow" above
 function addPlayerConditional(firstTime) {
