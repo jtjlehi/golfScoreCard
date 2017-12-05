@@ -50,10 +50,85 @@
   border-radius: 10px;
   background-color: #176014;
   box-shadow: 6px 6px 30px 0px #222;
-  z-index: 2; }
+  z-index: 2;
+  padding: 10px; }
   .cardCont .card {
-    display: grid;
-    grid-template-rows: 10% auto 10%; }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    background-color: white;
+    cursor: default;
+    font-size: 7px; }
+    @media (min-width: 1000px) {
+      .cardCont .card {
+        font-size: 20px; } }
+    @media (min-width: 800px) {
+      .cardCont .card {
+        font-size: 15px; } }
+    @media (min-width: 600px) {
+      .cardCont .card {
+        font-size: 12px; } }
+    .cardCont .card .cardRow {
+      display: flex; }
+      .cardCont .card .cardRow .rowLabel {
+        width: 10%;
+        border: solid 1px; }
+      .cardCont .card .cardRow .innerRow {
+        width: 70%;
+        display: flex; }
+        .cardCont .card .cardRow .innerRow .cardCell {
+          border: solid 1px; }
+      .cardCont .card .cardRow .spacer {
+        border: solid 1px;
+        width: 10%;
+        text-align: center; }
+      .cardCont .card .cardRow .spacer1 {
+        background-color: antiquewhite; }
+    .cardCont .card .playerCont .playerRow {
+      width: 100%;
+      display: flex; }
+      .cardCont .card .playerCont .playerRow .playerLabel {
+        border: solid 1px;
+        width: 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .cardCont .card .playerCont .playerRow .playerLabel .material-icons {
+          font-size: 15px;
+          margin-right: 6%;
+          cursor: pointer; }
+      .cardCont .card .playerCont .playerRow .innerRow {
+        width: 70%;
+        display: flex; }
+        .cardCont .card .playerCont .playerRow .innerRow .cardCell {
+          border: solid 1px;
+          cursor: text; }
+      .cardCont .card .playerCont .playerRow .totalScore {
+        border: 1px solid;
+        width: 10%;
+        text-align: center; }
+      .cardCont .card .playerCont .playerRow .hcp {
+        border: 1px solid;
+        width: 10%;
+        background-color: antiquewhite;
+        text-align: center; }
+    .cardCont .card .cardCell {
+      text-align: center; }
+    .cardCont .card input {
+      margin: 0px;
+      padding: 0; }
+    .cardCont .card .addPlayerRow {
+      display: flex;
+      justify-content: center; }
+      .cardCont .card .addPlayerRow button {
+        width: 100%;
+        border-radius: 0; }
+    .cardCont .card button {
+      box-shadow: none;
+      background-color: #d0d0d0; }
+    .cardCont .card button:hover {
+      background-color: #8a8a8a; }
 
 html {
   width: 100%;

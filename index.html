@@ -14,13 +14,19 @@
 <body>
 
 <div class="loadCont">
-    <div class="mdl-spinner mdl-js-spinner is-active"></div>
+    <div class="mdl-spinner mdl-js-spinner"></div>
 </div>
 <div class="startCont">
     <div class="locationSelectCont">
         <div class="innerCont">
             <label for="zipCode">Zip Code</label>
-            <input type="number" name="zipCode" id="zipCode" placeholder="12345">
+            <input
+                type="number"
+                name="zipCode"
+                id="zipCode"
+                placeholder=12345
+                min=11111
+                max=99999>
             <div class="inputSelected" id="forZipCode"></div>
             <button
                     id='zipCodeButton'
@@ -73,25 +79,45 @@
                 <span>Hole</span>
             </div>
             <div class="innerRow"></div>
-            <div class="rowSeparator"></div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
         </div>
         <div class="cardRow teeRow">
             <div class="rowLabel teeRowLabel"></div>
             <div class="innerRow"></div>
-            <div class="rowSeparator"></div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
         </div>
         <div class="cardRow parRow">
             <div class="rowLabel">Par</div>
             <div class="innerRow"></div>
-            <div class="rowSeparator"></div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
         </div>
         <div class="cardRow hcpRow">
             <div class="rowLabel">Handicap</div>
             <div class="innerRow"></div>
-            <div class="rowSeparator"></div>
+            <div class="spacer spacer1">
+                <span>HCP</span>
+            </div>
+            <div class="spacer spacer2">
+                <span>Total Score</span>
+            </div>
         </div>
         <div class="playerCont">
-            <div id="player1" class="playerRow"></div>
+            <div id="player1" class="playerRow">
+                <div class="rowLabel playerLabel">
+                    <span>Player 1</span>
+                    <span class="material-icons">create</span>
+                </div>
+                <div class="innerRow"></div>
+            </div>
+        </div>
+        <div class="addPlayerRow">
+            <button class="mdl-button mdl-js-button mdl-button--flat">
+                Add Player
+                <span class="material-icons">add</span>
+            </button>
         </div>
     </div>
 </div>
