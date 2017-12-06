@@ -146,7 +146,8 @@
   width: 110px;
   height: 100px;
   display: flex;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  z-index: 2; }
   .actionMenu .actionMenuContent {
     padding: 5px 0;
     width: 0px;
@@ -165,8 +166,8 @@
     border-radius: 2px;
     height: 100px;
     width: 110px;
-    box-shadow: 3px 3px 30px 0px #4f4f4f;
-    z-index: 1; }
+    box-shadow: 6px 6px 30px 0px #4f4f4f;
+    z-index: 2; }
   .actionMenu .liFocus {
     background-color: #d2d2d2; }
 
@@ -210,7 +211,30 @@
   background-color: rgba(0, 0, 0, 0.33);
   height: 100%;
   width: 100%;
-  position: relative; }
+  position: absolute;
+  top: 40px;
+  display: flex; }
+  .editPlayerCont .editPlayerMenu {
+    width: 40%;
+    height: 40%;
+    background-color: #f1f1f1;
+    box-shadow: 6px 6px 30px 0px #212121;
+    z-index: 2;
+    margin: 10% auto;
+    position: relative;
+    top: 0px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  .editPlayerCont .menuHidden {
+    top: -700px; }
+  .editPlayerCont .mdl-textfield__input, .editPlayerCont .mdl-textfield__label {
+    text-align: center; }
+
+.editPlayerContHidden {
+  background-color: rgba(0, 0, 0, 0); }
 
 html {
   width: 100%;

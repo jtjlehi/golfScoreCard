@@ -7,6 +7,7 @@
   height: 100px;
   display: flex;
   justify-content: flex-end;
+  z-index: 2;
   .actionMenuContent {
     padding: 5px 0;
     width: 0px;
@@ -28,7 +29,7 @@
     border-radius: 2px;
     height: 100px;
     width: 110px;
-    @include depth(1, #4f4f4f);
+    @include depth(2, #4f4f4f);
   }
   .liFocus {
     background-color: #d2d2d2;
