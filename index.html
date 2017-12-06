@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta charset="UTF-8">
     <meta name="veiwport" content="initial-scale=1.0 width=device-width">
@@ -12,10 +14,35 @@
     <title>Title</title>
 </head>
 <body>
-
-<div class="loadCont">
-    <div class="mdl-spinner mdl-js-spinner"></div>
-</div>
+<header class="heroBar">
+    <div class="content">
+        <div class="backArrowCont">
+            <i class="material-icons">arrow_back</i>
+        </div>
+        <div class="dropDownMenuCont dropDownMenuCont-js">
+            <i class="material-icons">more_vert</i>
+        </div>
+    </div>
+    <section class="actionMenu actionMenu-js">
+        <div class="actionMenuContent hidden">
+            <ul>
+                <li>Start New Card</li>
+                <li>Clear Card</li>
+                <li>Feedback</li>
+                <li>Help</li>
+            </ul>
+        </div>
+    </section>
+    <div class="loadCont hidden">
+        <div class="
+                loadBar
+                mdl-progress
+                mdl-js-progress
+                mdl-progress--indeterminate"
+             id="loadBar">
+        </div>
+    </div>
+</header>
 <div class="startCont">
     <div class="locationSelectCont">
         <div class="innerCont">

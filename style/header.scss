@@ -1,0 +1,25 @@
+@import "actionMenu";
+@import "loadScreen";
+.heroBar {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  .content {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    background-color: $green;
+    justify-content: space-between;
+    align-items: center;
+    .dropDownMenuCont {
+      width: 32px;
+      position: relative;
+    }
+    .material-icons {
+      color: $textColor;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
+}

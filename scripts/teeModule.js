@@ -1,4 +1,5 @@
 import {startGame} from "./loadCardModule.js";
+import {displayLoadScreen, hideLoadScreen} from "./loadingModule.js";
 
 function addHoles(holeCont, holesArray, index) {
     holesArray.forEach(function (hole) {
@@ -41,6 +42,7 @@ class Hole {
 
 export function teeTypeSelector(courseInfo) {
     //set up the course info to be easier to grab.
+    displayLoadScreen();
     courseInfo = courseInfo.course;
     let holes = courseInfo.holes;
     let teeTypes = courseInfo.tee_types.map((teeType) =>
@@ -66,4 +68,5 @@ export function teeTypeSelector(courseInfo) {
     });
     $('.teeSelectCont').removeClass('hidden');
     $('.courseSelectCont').addClass('hidden');
+    hideLoadScreen();
 }

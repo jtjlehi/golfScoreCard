@@ -7,7 +7,7 @@
 .startCont {
   width: 100%;
   height: 50%;
-  margin: 100px auto;
+  margin: -20px auto;
   border-radius: 10px;
   background-color: #176014;
   box-shadow: 6px 6px 30px 0px #222;
@@ -46,7 +46,7 @@
   flex-direction: column; }
 
 .cardCont {
-  margin: 100px auto;
+  margin: -20px auto;
   border-radius: 10px;
   background-color: #176014;
   box-shadow: 6px 6px 30px 0px #222;
@@ -130,6 +130,74 @@
     .cardCont .card button:hover {
       background-color: #8a8a8a; }
 
+.loadCont {
+  width: 100%;
+  position: relative;
+  bottom: 110px; }
+  .loadCont .loadBar {
+    width: 100%;
+    height: 4px; }
+
+.actionMenu {
+  position: relative;
+  top: -20px;
+  right: 20px;
+  padding: 5px;
+  width: 110px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end; }
+  .actionMenu .actionMenuContent {
+    padding: 5px 0;
+    width: 0px;
+    height: 0px;
+    overflow: hidden; }
+    .actionMenu .actionMenuContent ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif; }
+      .actionMenu .actionMenuContent ul li {
+        cursor: pointer;
+        padding: 0 5px; }
+  .actionMenu .actionMenuOpen {
+    background-color: #f1f1f1;
+    border-radius: 2px;
+    height: 100px;
+    width: 110px;
+    box-shadow: 3px 3px 30px 0px #4f4f4f;
+    z-index: 1; }
+  .actionMenu .liFocus {
+    background-color: #d2d2d2; }
+
+.loadCont {
+  width: 100%;
+  position: relative;
+  bottom: 110px; }
+  .loadCont .loadBar {
+    width: 100%;
+    height: 4px; }
+
+.heroBar {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column; }
+  .heroBar .content {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    background-color: #176014;
+    justify-content: space-between;
+    align-items: center; }
+    .heroBar .content .dropDownMenuCont {
+      width: 32px;
+      position: relative; }
+    .heroBar .content .material-icons {
+      color: #d0d0d0;
+      font-size: 30px;
+      cursor: pointer; }
+
 html {
   width: 100%;
   height: 100%;
@@ -179,9 +247,5 @@ button {
 
 button:hover {
   cursor: pointer; }
-
-.loadCont {
-  position: absolute;
-  left: 100px; }
 
 /*# sourceMappingURL=style.css.map */

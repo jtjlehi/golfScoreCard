@@ -1,7 +1,9 @@
+import {displayLoadScreen, hideLoadScreen} from "./loadingModule.js";
 //actually loading the game card
 //the function that runs after you choose the tee type
 export function startGame(teeTypes, teeTypeIndex) {
     //store the tee type data for if they reload the page
+    displayLoadScreen();
     let teeTypesObj = {teeTypes: teeTypes};
     //shorter references
     let selectedTeeType = teeTypes[teeTypeIndex];
@@ -16,6 +18,7 @@ export function startGame(teeTypes, teeTypeIndex) {
     //display the card
     $('.startCont').addClass('hidden');
     $('.cardCont').removeClass('hidden');
+    hideLoadScreen();
 }
 function displayHoleRow(holeCount) {
     for(let i = 1; i <= holeCount; i ++) {

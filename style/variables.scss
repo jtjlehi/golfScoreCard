@@ -7,7 +7,7 @@
   src: url('../fonts/Roboto-Bold.ttf');
 }
 @mixin cardStyle() {;
-  margin: 100px auto;
+  margin: -20px auto;
   border-radius: 10px;
   background-color: $green;
   @include depth(2, #222);

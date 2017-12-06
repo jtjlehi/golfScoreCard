@@ -1,4 +1,5 @@
 import {teeTypeSelector} from "./teeModule.js";
+import {displayLoadScreen, hideLoadScreen} from "./loadingModule.js";
 export function startOnLoad() {
     //grab the courses to choose from
     $('#zipCode').keyup(function (event) {
@@ -16,6 +17,7 @@ export function startOnLoad() {
 }
 //pull lat and long based on zip code
 function getLocation(func) {
+    displayLoadScreen();
     let zipCode = $('#zipCode').val();
     if(zipCode.length === 5) {
         let apiKey = "AIzaSyC8rMZYfIhoWQfVnbqDBqvoDpjLwtrk488";
@@ -31,8 +33,10 @@ function getLocation(func) {
             }
         });
     }
+    hideLoadScreen();
 }
 function loadCourses(locationInfo) {
+    displayLoadScreen();
     $.post("https://golf-courses-api.herokuapp.com/courses", locationInfo, function (data, status) {
         let allCourses = JSON.parse(data);
         let courses = allCourses.courses;
@@ -48,6 +52,7 @@ function loadCourses(locationInfo) {
         //actually select the course and start the game.
         selectCourse(courseId);
     });
+    hideLoadScreen();
 }
 //the function to add courses
 function addCourse(course) {
@@ -56,6 +61,7 @@ function addCourse(course) {
 }
 //request for the data to load the game card
 function selectCourse(courseId) {
+    displayLoadScreen();
     $.ajax('https://golf-courses-api.herokuapp.com/courses/' + courseId, {
         success: function (data) {
             let courseInfo = JSON.parse(data);
@@ -63,4 +69,5 @@ function selectCourse(courseId) {
             teeTypeSelector(courseInfo);
         }
     });
+    hideLoadScreen();
 }
