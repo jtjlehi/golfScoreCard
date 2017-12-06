@@ -39,7 +39,6 @@ class Hole {
         this.hcp = hcp;
     }
 }
-
 export function teeTypeSelector(courseInfo) {
     //set up the course info to be easier to grab.
     displayLoadScreen();
