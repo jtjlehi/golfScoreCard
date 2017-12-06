@@ -189,7 +189,9 @@
     display: flex;
     background-color: #176014;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    box-shadow: 6px 6px 30px 0px #444444;
+    z-index: 2; }
     .heroBar .content .dropDownMenuCont {
       width: 32px;
       position: relative; }
@@ -197,6 +199,18 @@
       color: #d0d0d0;
       font-size: 30px;
       cursor: pointer; }
+
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Light.ttf"); }
+@font-face {
+  font-family: RobotoBold;
+  src: url("../fonts/Roboto-Bold.ttf"); }
+.editPlayerCont {
+  background-color: rgba(0, 0, 0, 0.33);
+  height: 100%;
+  width: 100%;
+  position: relative; }
 
 html {
   width: 100%;

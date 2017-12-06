@@ -3,6 +3,7 @@
 @import "cardCont";
 @import "loadScreen";
 @import "header";
+@import "editPlayerMenu";
 html{
   @include bodyStyle();
   body{

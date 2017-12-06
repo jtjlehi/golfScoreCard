@@ -12,6 +12,7 @@
     background-color: $green;
     justify-content: space-between;
     align-items: center;
+    @include depth(2, #444444);
     .dropDownMenuCont {
       width: 32px;
       position: relative;
