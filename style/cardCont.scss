@@ -84,9 +84,10 @@
       margin: 0px;
       padding: 0;
     }
-    .addPlayerRow {
+    .buttonRow {
       display: flex;
       justify-content: center;
+      border: solid 1px black;
       button {
         width: 100%;
         border-radius: 0;

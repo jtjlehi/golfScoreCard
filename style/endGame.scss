@@ -1,0 +1,56 @@
+.endGameCont {
+  background-color: $fadedBackground;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  display: flex;
+  .endGameCard {
+    width: 60%;
+    height: 40%;
+    background-color: $inputBackground;
+    @include depth(2, #212121);
+    margin: 10% auto;
+    position: relative;
+    top: 0px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    header {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      span {
+        display: block;
+        font-size: 20px;
+      }
+    }
+    .playerData {
+      width: 80%;
+      border: solid 1px;
+      .labelRow {
+        border-bottom: dotted 1px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-around;
+        .name {
+          width: 40%;
+          border: solid 1px;
+        }
+        .cell {
+          width: 20%;
+          text-align: center;
+          border: solid 1px;
+        }
+      }
+    }
+  }
+  .endCardHidden {
+    top: -700px;
+  }
+}
+.endGameContHidden {
+  background-color: rgba(0,0,0,0);
+}

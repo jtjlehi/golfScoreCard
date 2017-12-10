@@ -118,10 +118,11 @@
     .cardCont .card input {
       margin: 0px;
       padding: 0; }
-    .cardCont .card .addPlayerRow {
+    .cardCont .card .buttonRow {
       display: flex;
-      justify-content: center; }
-      .cardCont .card .addPlayerRow button {
+      justify-content: center;
+      border: solid 1px black; }
+      .cardCont .card .buttonRow button {
         width: 100%;
         border-radius: 0; }
     .cardCont .card button {
@@ -241,6 +242,54 @@
     margin: 5px auto; }
 
 .editPlayerContHidden {
+  background-color: rgba(0, 0, 0, 0); }
+
+.endGameCont {
+  background-color: rgba(0, 0, 0, 0.67);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  display: flex; }
+  .endGameCont .endGameCard {
+    width: 60%;
+    height: 40%;
+    background-color: #f1f1f1;
+    box-shadow: 6px 6px 30px 0px #212121;
+    z-index: 2;
+    margin: 10% auto;
+    position: relative;
+    top: 0px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .endGameCont .endGameCard header {
+      display: flex;
+      justify-content: center;
+      text-align: center; }
+      .endGameCont .endGameCard header span {
+        display: block;
+        font-size: 20px; }
+    .endGameCont .endGameCard .playerData {
+      width: 80%;
+      border: solid 1px; }
+      .endGameCont .endGameCard .playerData .labelRow {
+        border-bottom: dotted 1px; }
+      .endGameCont .endGameCard .playerData .row {
+        display: flex;
+        justify-content: space-around; }
+        .endGameCont .endGameCard .playerData .row .name {
+          width: 40%;
+          border: solid 1px; }
+        .endGameCont .endGameCard .playerData .row .cell {
+          width: 20%;
+          text-align: center;
+          border: solid 1px; }
+  .endGameCont .endCardHidden {
+    top: -700px; }
+
+.endGameContHidden {
   background-color: rgba(0, 0, 0, 0); }
 
 html {

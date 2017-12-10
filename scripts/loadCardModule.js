@@ -1,6 +1,7 @@
 import {displayLoadScreen, hideLoadScreen} from "./loadingModule.js";
 import {makeNewPlayer} from "./playerModule.js";
 import { showEditPlayerMenu, hideEditPlayerMenu } from "./editPlayerModule.js";
+import {endGame} from "./endGameModule.js"
 
 //the function that runs after you choose the tee type
 export function startGame(teeTypes, teeTypeIndex) {
@@ -20,6 +21,9 @@ export function startGame(teeTypes, teeTypeIndex) {
     //make the add player button work
     $('.addPlayerRow').click(function () {
         showEditPlayerMenu(holes);
+    });
+    $('.endGameRow').click(function () {
+        endGame(selectedTeeType.totalPar);
     });
 }
 function displayHoleRow(holeCount) {

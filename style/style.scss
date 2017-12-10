@@ -4,6 +4,7 @@
 @import "loadScreen";
 @import "header";
 @import "editPlayerMenu";
+@import "endGame";
 html{
   @include bodyStyle();
   body{
