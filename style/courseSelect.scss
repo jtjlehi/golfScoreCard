@@ -17,31 +17,24 @@
   }
   .locationSelectCont {
     label {
-      //font-size: 20px;
-      //color: $textColor;
+      font-size: 20px;
     }
     input {
-      height: 40px;
-      width: 80px;
-      text-align: center;
-      -webkit-appearance: none;
-      background-color: #f1f1f1;
-      border-radius: 2px;
-      border: none;
-      margin: 10px;
-    }
-    .inputSelected {
-      top: -18px;
     }
   }
 }
 .innerCont {
   @include roboto();
   padding-top: 20px;
-  color: $textColor;
+  //color: $textColor;
   font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  .inputCont {
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+  }
 }

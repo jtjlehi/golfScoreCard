@@ -23,27 +23,21 @@
     .startCont .courseSelectCont .courseSelect {
       height: 40px;
       font-size: 20px; }
-  .startCont .locationSelectCont input {
-    height: 40px;
-    width: 80px;
-    text-align: center;
-    -webkit-appearance: none;
-    background-color: #f1f1f1;
-    border-radius: 2px;
-    border: none;
-    margin: 10px; }
-  .startCont .locationSelectCont .inputSelected {
-    top: -18px; }
+  .startCont .locationSelectCont label {
+    font-size: 20px; }
 
 .innerCont {
   font-family: 'Roboto', sans-serif;
   padding-top: 20px;
-  color: #d0d0d0;
   font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; }
+  .innerCont .inputCont {
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 3px; }
 
 .cardCont {
   margin: -20px auto;

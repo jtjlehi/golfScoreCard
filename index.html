@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="mdl/material.min.css">
     <script defer src="mdl/material.min.js"></script>
-    <title>Title</title>
+    <title>Golf Scorecard</title>
 </head>
 <body>
 <header class="heroBar">
@@ -26,6 +26,7 @@
     <section class="actionMenu actionMenu-js">
         <div class="actionMenuContent hidden">
             <ul>
+                <li>None of these work</li>
                 <li>Start New Card</li>
                 <li>Clear Card</li>
                 <li>Feedback</li>
@@ -46,15 +47,16 @@
 <div class="startCont">
     <div class="locationSelectCont">
         <div class="innerCont">
-            <label for="zipCode">Zip Code</label>
-            <input
-                type="number"
-                name="zipCode"
-                id="zipCode"
-                placeholder=12345
-                min=11111
-                max=99999>
-            <div class="inputSelected" id="forZipCode"></div>
+            <div class="mdl-textfield mdl-js-textfield inputCont mdl-textfield--floating-label">
+                <input
+                        class="mdl-textfield__input"
+                        type="number"
+                        name="zipCode"
+                        id="zipCode"
+                        min=11111
+                        max=99999>
+                <label for="zipCode" class="mdl-textfield__label">Zip Code</label>
+            </div>
             <button
                     id='zipCodeButton'
                     class="courseSelectButton
