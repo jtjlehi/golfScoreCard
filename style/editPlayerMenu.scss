@@ -20,9 +20,10 @@
     align-items: center;
     justify-content: center;
     .playerNameCont {
+      width: 80%;
     }
     .playerHCPCont {
-
+      width: 80%;
     }
   }
   .menuHidden {
@@ -30,6 +31,10 @@
   }
   .mdl-textfield__input, .mdl-textfield__label {
     text-align: center;
+  }
+  button {
+    width: 30%;
+    margin: 5px auto;
   }
 }
 .editPlayerContHidden {

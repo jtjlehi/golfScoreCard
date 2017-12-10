@@ -1,5 +1,8 @@
 import {teeTypeSelector} from "./teeModule.js";
 import {displayLoadScreen, hideLoadScreen} from "./loadingModule.js";
+import {increaseState, getStateData, runState} from "./screenStateModule.js";
+
+
 export function startOnLoad() {
     //grab the courses to choose from
     $('#zipCode').keyup(function (event) {
@@ -33,10 +36,8 @@ function getLocation(func) {
             }
         });
     }
-    hideLoadScreen();
 }
-function loadCourses(locationInfo) {
-    displayLoadScreen();
+export function loadCourses(locationInfo) {
     $.post("https://golf-courses-api.herokuapp.com/courses", locationInfo, function (data, status) {
         let allCourses = JSON.parse(data);
         let courses = allCourses.courses;

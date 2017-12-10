@@ -1,12 +1,18 @@
+import { editPlayer } from "./editPlayerModule.js";
+
 export function createPlayerRow(playerIndex, playerName) {
-    return $(`
+    let el = $(`
         <div id="player${playerIndex}" class="playerRow">
             <div class="rowLabel playerLabel">
-                <span>player ${playerIndex}</span>
-                <span class="material-icons">create</span>
+                <span class="playerNameSpan">${playerName}</span>
+                <span class="material-icons editPlayerBtn">create</span>
             </div>
             <div class="innerRow"></div>
         </div>`);
+    el.find('.editPlayerBtn').click(function () {
+        editPlayer(el);
+    });
+    return el;
 }
 export function addHolesToPlayer(holeCount, playerIndex, holeCont) {
     for (let i = 0; i < holeCount; i++) {
@@ -17,8 +23,8 @@ export function addHolesToPlayer(holeCount, playerIndex, holeCont) {
                         data-index=i>`);
     }
 }
-export function finishPlayerRow(playerCount, row) {
-    row.append(`<input type="number" class="hcp player${playerCount}Hcp" value="0">`);
+export function finishPlayerRow(playerCount, row, hcp) {
+    row.append(`<input type="number" class="hcp player${playerCount}Hcp" value=${hcp} readonly>`);
     row.append(
         `<input 
                 class="totalScore player${playerCount}Score"

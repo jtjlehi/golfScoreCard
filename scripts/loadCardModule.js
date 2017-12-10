@@ -1,5 +1,6 @@
 import {displayLoadScreen, hideLoadScreen} from "./loadingModule.js";
 import {makeNewPlayer} from "./playerModule.js";
+import { showEditPlayerMenu, hideEditPlayerMenu } from "./editPlayerModule.js";
 
 //the function that runs after you choose the tee type
 export function startGame(teeTypes, teeTypeIndex) {
@@ -11,19 +12,15 @@ export function startGame(teeTypes, teeTypeIndex) {
     let holes = selectedTeeType.holes;
     let holeCount = holes.length;
     //build the card
+    showEditPlayerMenu(holes);
     displayHoleRow(holeCount);
     displayTeeRow(holeCount, selectedTeeType, holes);
-    makeNewPlayer(holes, );
     $('.teeRow').css('background-color', selectedTeeType.hexColor);
     $('.parRow').css('background-color', selectedTeeType.hexColor);
     //make the add player button work
     $('.addPlayerRow').click(function () {
-        makeNewPlayer(holes, );
+        showEditPlayerMenu(holes);
     });
-    //display the card
-    $('.startCont').addClass('hidden');
-    $('.cardCont').removeClass('hidden');
-    hideLoadScreen();
 }
 function displayHoleRow(holeCount) {
     for(let i = 1; i <= holeCount; i ++) {

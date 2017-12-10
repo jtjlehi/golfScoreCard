@@ -1,10 +1,16 @@
 import {createPlayerRow, addHolesToPlayer, finishPlayerRow, stylePlayerRow} from "./createPlayerElementModule.js";
+import {hideLoadScreen} from "./loadingModule.js";
 //global player object
 export let players = [];
+export let playerNames = [];
+export function addName(name) {
+    playerNames.push(new RegExp('^' + name + '$'));
+}
+
 //the function I export in order to make new players
-export function makeNewPlayer(holes, hcp) {
+export function makeNewPlayer(holes, name, hcp) {
     if(players.length < 4) {
-        players.push(new Player(holes, hcp, players.length + 1));
+        players.push(new Player(holes, name, hcp, players.length + 1));
     }
     else {
         displayErrorScreen();
@@ -12,11 +18,11 @@ export function makeNewPlayer(holes, hcp) {
 }
 export class Player{
     //holes is an array containing all the player holes for the player
-    constructor(holes, hcp, index) {
+    constructor(holes, name, hcp, index) {
         this.holes = new PlayerHoles(holes);
         this.hcp = hcp;
         this.index = index;
-        this.name = 'player' + this.index;
+        this.name = name;
         this.totalScore = 0;
         this.playerRow = this.createElement();
         this.holeElements = this.playerRow.find('.innerRow').children();
@@ -26,8 +32,11 @@ export class Player{
         let playerRow = createPlayerRow(this.index, this.name);
         $('.playerCont').append(playerRow);
         addHolesToPlayer(this.holes.length, this.index, playerRow.children().last());
-        finishPlayerRow(this.index, playerRow);
+        finishPlayerRow(this.index, playerRow, this.hcp);
         stylePlayerRow(this.holes.length);
+        $('.startCont').addClass('hidden');
+        $('.cardCont').removeClass('hidden');
+        hideLoadScreen();
         return playerRow;
     }
     changeHoleScore(index, element) {
