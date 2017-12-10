@@ -1,4 +1,4 @@
-import {makeNewPlayer, addName, playerNames} from "./playerModule.js";
+import {makeNewPlayer, addName, playerNames, players} from "./playerModule.js";
 
 export function showEditPlayerMenu(holes) {
     $('.editPlayerCont').removeClass('hidden');
@@ -28,7 +28,7 @@ function testValidity(currentName) {
     let el = $('#playerNameInput');
     let returnVal = true;
     playerNames.forEach((regEx) => {
-        if(regEx.test(el.val()) && !regEx.test(currentName)) {
+        if(regEx.test(el.val()) && !regEx.test(currentName) && $('#playerHCPInput').val() !== "") {
             $('.playerNameCont').addClass('is-invalid');
             returnVal = false;
         }
@@ -40,7 +40,7 @@ export function hideEditPlayerMenu() {
     $('.editPlayerCont').addClass('editPlayerContHidden', 300);
     $('.editPlayerCont').addClass('hidden', 400);
 }
-export function editPlayer(el) {
+export function editPlayer(el, playerIndex) {
     let editPlayerCont = $('.editPlayerCont');
     let oldName = $('#playerNameInput').val();
     editPlayerCont.removeClass('hidden');
@@ -53,6 +53,7 @@ export function editPlayer(el) {
             let newHCP = $('#playerHCPInput').val();
             el.find('.playerNameSpan').text(newName);
             el.find('.hcp').val(newHCP);
+            players[playerIndex - 1].changeHCP(newHCP);
             hideEditPlayerMenu();
         }
     });

@@ -11,7 +11,7 @@ export function createPlayerRow(playerIndex, playerName) {
             <div class="innerRow"></div>
         </div>`);
     el.find('.editPlayerBtn').click(function () {
-        editPlayer(el);
+        editPlayer(el, playerIndex);
     });
     return el;
 }
