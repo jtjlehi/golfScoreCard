@@ -31,19 +31,22 @@ export class Player{
     createElement() {
         let playerRow = createPlayerRow(this.index, this.name);
         $('.playerCont').append(playerRow);
-        addHolesToPlayer(this.holes.length, this.index, playerRow.children().last());
         finishPlayerRow(this.index, playerRow, this.hcp);
+        addHolesToPlayer(this.holes.length, this.index, playerRow.find('.innerRow'), this);
         stylePlayerRow(this.holes.length);
         $('.startCont').addClass('hidden');
         $('.cardCont').removeClass('hidden');
         hideLoadScreen();
         return playerRow;
     }
-    changeHoleScore(index, element) {
-        let addedVal = this.holeElements[index].val();
-        let scoreElement = this.scoreElement;
-        this.totalScore = this.totalScore - this.holes[index].score + addedVal;
-        this.scoreElement.val(this.totalScore);
+    changeHoleScore(index, element, scoreEl) {
+        let addedVal = Number(element.val());
+        this.totalScore = this.totalScore - this.holes.array[index].score + addedVal;
+        this.holes.array[index].score = addedVal;
+        scoreEl.val(this.totalScore);
+    }
+    changeHCP(HCP) {
+        this.hcp = HCP;
     }
 }
 //the container for the holes;

@@ -1,4 +1,5 @@
 import { editPlayer } from "./editPlayerModule.js";
+import {players} from "./playerModule.js";
 
 export function createPlayerRow(playerIndex, playerName) {
     let el = $(`
@@ -14,13 +15,20 @@ export function createPlayerRow(playerIndex, playerName) {
     });
     return el;
 }
-export function addHolesToPlayer(holeCount, playerIndex, holeCont) {
+export function addHolesToPlayer(holeCount, playerIndex, holeCont, playerObj) {
     for (let i = 0; i < holeCount; i++) {
-        holeCont.append(`<input 
+        let totalEl = holeCont.parent().find('.totalScore');
+        let hole = $(`<input 
+                        min="0"
                         type="number" 
                         value="0" 
                         class="cardCell playerCell player${playerIndex}" 
-                        data-index=i>`);
+                        data-index=${i}>`);
+        holeCont.append(hole);
+        hole.keyup(function() {
+            playerObj.changeHoleScore(i, hole, totalEl);
+        });
+
     }
 }
 export function finishPlayerRow(playerCount, row, hcp) {
